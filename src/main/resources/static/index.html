@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Book Library</h1>
+
+
+    <div class="filters">
+        <input type="text" id="filterName" placeholder="Filter by Name">
+        <input type="text" id="filterYear" placeholder="Filter by Year">
+        <input type="text" id="filterAuthor" placeholder="Filter by Author">
+        <input type="number" id="filterRating" placeholder="Min Rating">
+        <button onclick="applyFilters()">Apply Filters</button>
+    </div>
+
+
+    <div class="sort">
+        <label>Sort by:</label>
+        <select id="sortBy">
+            <option value="year">Year</option>
+            <option value="name">Name</option>
+            <option value="author">Author</option>
+            <option value="totalRating">Total Rating</option>
+        </select>
+        <select id="order">
+            <option value="desc">Descending</option>
+            <option value="asc">Ascending</option>
+        </select>
+        <button onclick="sortBooks()">Sort</button>
+    </div>
+
+
+    <ul id="bookList">
+
+    </ul>
+</div>
+
+
+<div id="ratingModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Rate Book</h2>
+        <p id="bookTitle">Book Title</p>
+        <input type="number" id="ratingInput" placeholder="Enter rating (1-5)">
+        <button onclick="submitRating()">Submit Rating</button>
+    </div>
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>
