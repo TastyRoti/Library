@@ -1,6 +1,6 @@
-let currentBookId = null; // Track which book is being rated
+let currentBookId = null; 
 
-// Fetch and display books when the page loads
+
 window.onload = function() {
     fetchBooks();
 };
@@ -15,7 +15,7 @@ function fetchBooks(sortBy = 'year', order = 'desc') {
         .catch(error => console.error('Error fetching books:', error));
 }
 
-// Function to display books in the list
+
 function displayBooks(books) {
     const bookList = document.getElementById('bookList');
     bookList.innerHTML = ''; // Clear existing books
@@ -28,19 +28,19 @@ function displayBooks(books) {
     });
 }
 
-// Function to open the rating modal
+
 function openRatingModal(bookId, bookName) {
     currentBookId = bookId;
     document.getElementById('bookTitle').innerText = `Rate "${bookName}"`;
     document.getElementById('ratingModal').style.display = 'flex'; // Show the modal
 }
 
-// Function to close the rating modal
+
 function closeModal() {
     document.getElementById('ratingModal').style.display = 'none'; // Hide the modal
 }
 
-// Function to submit the rating
+
 function submitRating() {
     const rating = document.getElementById('ratingInput').value;
 
@@ -64,7 +64,7 @@ function submitRating() {
     .catch(error => console.error('Error submitting rating:', error));
 }
 
-// Function to apply filters and update the book list
+
 function applyFilters() {
     const filterName = document.getElementById('filterName').value.toLowerCase();
     const filterYear = document.getElementById('filterYear').value;
@@ -102,7 +102,7 @@ function applyFilters() {
         .catch(error => console.error('Error applying filters:', error));
 }
 
-// Function to sort books
+
 function sortBooks() {
     const sortBy = document.getElementById('sortBy').value;
     const order = document.getElementById('order').value;
