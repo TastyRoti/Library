@@ -32,12 +32,12 @@ function displayBooks(books) {
 function openRatingModal(bookId, bookName) {
     currentBookId = bookId;
     document.getElementById('bookTitle').innerText = `Rate "${bookName}"`;
-    document.getElementById('ratingModal').style.display = 'flex'; // Show the modal
+    document.getElementById('ratingModal').style.display = 'flex'; 
 }
 
 
 function closeModal() {
-    document.getElementById('ratingModal').style.display = 'none'; // Hide the modal
+    document.getElementById('ratingModal').style.display = 'none'; 
 }
 
 
@@ -76,22 +76,22 @@ function applyFilters() {
         .then(books => {
             let filteredBooks = books;
 
-            // Apply name filter
+            
             if (filterName) {
                 filteredBooks = filteredBooks.filter(book => book.name.toLowerCase().includes(filterName));
             }
 
-            // Apply year filter
+           
             if (filterYear) {
                 filteredBooks = filteredBooks.filter(book => book.year === Number(filterYear));
             }
 
-            // Apply author filter
+            
             if (filterAuthor) {
                 filteredBooks = filteredBooks.filter(book => book.author.toLowerCase().includes(filterAuthor));
             }
 
-            // Apply totalRating filter
+            
             if (filterRating) {
                 filteredBooks = filteredBooks.filter(book => book.totalRating >= Number(filterRating));
             }
